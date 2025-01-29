@@ -1,0 +1,13 @@
+{
+  "api": {
+    "token": "process.env.HUGGINGFACE_API_TOKEN",
+    "organization": "TataAI"
+  },
+  "gpu": {
+    "provider": "RunPod",
+    "instance_type": "A100",
+    "num_gpus": 4
+  },
+  "model_repo": "TataAI/tata-core",
+  "dataset_repo": "TataAI/tata-datasets"
+}
