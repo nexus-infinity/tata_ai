@@ -1,0 +1,19 @@
+# Exclude Git files
+.git
+.gitignore
+
+# Exclude Node.js dependencies and Python environments
+node_modules
+venv
+env
+tata_ai_env
+
+# Exclude Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude log files and temporary files
+*.log
+tmp/

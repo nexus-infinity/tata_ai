@@ -1,1 +1,39 @@
-.vercel
+# Node.js / Vercel
+.vercel/
+node_modules/
+
+# Python virtual environments
+venv/
+env/
+tata_ai_env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Build directories and distribution packages
+build/
+dist/
+.eggs/
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+
+# Environment variable files
+.env
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Docker specific local override files (if any)
+docker-compose.override.yml
+docker-compose.*.override.yml.vercel
