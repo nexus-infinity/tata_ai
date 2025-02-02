@@ -1,6 +1,9 @@
 # Node.js / Vercel
 .vercel/
+<<<<<<< HEAD
 node_modules/
+=======
+>>>>>>> fadd7624 (Update .gitignore to exclude unnecessary files and directories)
 
 # Python virtual environments
 venv/
@@ -11,6 +14,7 @@ tata_ai_env/
 __pycache__/
 *.py[cod]
 
+<<<<<<< HEAD
 # Build directories and distribution packages
 build/
 dist/
@@ -37,3 +41,12 @@ dist/
 # Docker specific local override files (if any)
 docker-compose.override.yml
 docker-compose.*.override.yml.vercel
+=======
+# Build directories
+build/
+dist/
+
+# Miscellaneous
+.DS_Store
+.env
+>>>>>>> fadd7624 (Update .gitignore to exclude unnecessary files and directories)
