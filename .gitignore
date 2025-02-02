@@ -37,3 +37,5 @@ dist/
 # Docker specific local override files (if any)
 docker-compose.override.yml
 docker-compose.*.override.yml
+.vercel
+.env*.local
