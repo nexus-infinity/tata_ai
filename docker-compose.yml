@@ -1,0 +1,83 @@
+services:
+  tata-core:
+    build: ./docker/tata-core
+    container_name: tata-core
+    ports:
+      - "5001:5001"
+    environment:
+      - SERVICE_NAME=Tata-CORE
+    depends_on:
+      - tata-memex
+      - tata-zkp
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - tata-network
+
+  tata-memex:
+    build: ./docker/tata-memex
+    container_name: tata-memex
+    ports:
+      - "5002:5002"
+    environment:
+      - SERVICE_NAME=Tata-MEMEX
+      - DB_HOST=mongodb
+    depends_on:
+      - mongodb
+    restart: always
+    networks:
+      - tata-network
+
+  tata-zkp:
+    build: ./docker/tata-zkp
+    container_name: tata-zkp
+    ports:
+      - "5003:5003"
+    environment:
+      - SERVICE_NAME=Tata-ZKP
+    restart: always
+    networks:
+      - tata-network
+
+  tata-flow:
+    build: ./docker/tata-flow
+    container_name: tata-flow
+    ports:
+      - "5004:5004"
+    environment:
+      - SERVICE_NAME=Tata-FLOW
+    restart: always
+    networks:
+      - tata-network
+
+  tata-moto:
+    build: ./docker/tata-moto
+    container_name: tata-moto
+    ports:
+      - "5005:5005"
+    environment:
+      - SERVICE_NAME=Tata-MOTO
+    restart: always
+    networks:
+      - tata-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: tata-mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - tata-network
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  tata-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

@@ -39,3 +39,4 @@ docker-compose.override.yml
 docker-compose.*.override.yml
 .vercel
 .env*.local
+.DS_Store

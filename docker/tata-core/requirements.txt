@@ -1,0 +1,5 @@
+flask
+numpy
+pandas
+requests
+# Add any other dependencies your project requires

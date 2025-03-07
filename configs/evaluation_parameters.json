@@ -1,0 +1,30 @@
+{
+    "EvaluationParameters": {
+        "patternRecognitionStrength": {
+            "description": "Ability to detect and interpret patterns in data",
+            "metricType": "score",
+            "value": 0,
+            "maxValue": 100,
+            "weight": 1.0
+        },
+        "cognitiveAdaptability": {
+            "description": "Ability to adapt to new scenarios or changes based on input",
+            "metricType": "score",
+            "value": 0,
+            "maxValue": 100,
+            "weight": 1.0
+        },
+        "ethicalConsiderations": {
+            "description": "Adherence to ethical guidelines and avoidance of biases",
+            "criteria": ["bias", "privacy", "transparency"],
+            "complianceLevel": 0,
+            "maxLevel": 100,
+            "weight": 1.0
+        },
+        "efficiencyAccuracyTradeOff": {
+            "description": "Balance between efficiency (speed/resources) and accuracy",
+            "accuracyPriority": 0.5,
+            "efficiencyPriority": 0.5
+        }
+    }
+}
