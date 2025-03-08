@@ -6,7 +6,7 @@ const { execSync } = require('child_process');
 
 // Configuration - adjust paths based on your README structure
 const PROJECT_ROOT = process.env.PROJECT_ROOT || path.resolve(__dirname, '..');
-const FRONTEND_DIR = path.join(PROJECT_ROOT, 'frontend/tata-ai-dashboard');
+const FRONTEND_DIR = path.join(PROJECT_ROOT, 'frontend'); // Updated path - removed tata-ai-dashboard
 const BACKEND_DIRS = [
   path.join(PROJECT_ROOT, 'src/tata-core'),
   path.join(PROJECT_ROOT, 'src/tata-flow'),
@@ -140,7 +140,7 @@ async function checkProjectStructure() {
 async function checkFrontendConfig() {
   console.log(`\n${colors.cyan}Checking frontend configuration...${colors.reset}`);
   
-  if (!await checkDirectoryExists(FRONTEND_DIR, 'Frontend Dashboard')) {
+  if (!await checkDirectoryExists(FRONTEND_DIR, 'Frontend')) {
     return false;
   }
   

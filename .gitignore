@@ -40,3 +40,5 @@ docker-compose.*.override.yml
 .vercel
 .env*.local
 .DS_Store
+configs/credentials/
+*.json
