@@ -1,3 +1,4 @@
+version: "3.8"
 services:
   tata-core:
     build: ./docker/tata-core
@@ -9,6 +10,7 @@ services:
     depends_on:
       - tata-memex
       - tata-zkp
+      - postgres_core
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5001/status"]
@@ -27,7 +29,7 @@ services:
       - SERVICE_NAME=Tata-MEMEX
       - DB_HOST=mongodb
     depends_on:
-      - mongodb
+      - mongodb_memex
     restart: always
     networks:
       - tata-network
@@ -39,6 +41,9 @@ services:
       - "5003:5003"
     environment:
       - SERVICE_NAME=Tata-ZKP
+    depends_on:
+      - postgres_zkp
+      - redis_zkp
     restart: always
     networks:
       - tata-network
@@ -50,6 +55,8 @@ services:
       - "5004:5004"
     environment:
       - SERVICE_NAME=Tata-FLOW
+    depends_on:
+      - redis_flow
     restart: always
     networks:
       - tata-network
@@ -61,6 +68,8 @@ services:
       - "5005:5005"
     environment:
       - SERVICE_NAME=Tata-MOTO
+    depends_on:
+      - mysql_moto
     restart: always
     networks:
       - tata-network
@@ -75,9 +84,78 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  postgres_core:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${TATA_CORE_DB_USER}
+      POSTGRES_PASSWORD: ${TATA_CORE_DB_PASSWORD}
+      POSTGRES_DB: ${TATA_CORE_DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_core_data:/var/lib/postgresql/data
+    networks:
+      - tata-network
+
+  redis_flow:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    networks:
+      - tata-network
+
+  mongodb_memex:
+    image: mongo:6
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${TATA_MEMEX_DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${TATA_MEMEX_DB_PASSWORD}
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_memex_data:/data/db
+    networks:
+      - tata-network
+
+  mysql_moto:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_USER: ${TATA_MOTO_DB_USER}
+      MYSQL_ROOT_PASSWORD: ${TATA_MOTO_DB_PASSWORD}
+      MYSQL_DATABASE: ${TATA_MOTO_DB_NAME}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_moto_data:/var/lib/mysql
+    networks:
+      - tata-network
+
+  postgres_zkp:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${TATA_ZKP_DB_USER}
+      POSTGRES_PASSWORD: ${TATA_ZKP_DB_PASSWORD}
+      POSTGRES_DB: ${TATA_ZKP_DB_NAME}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_zkp_data:/var/lib/postgresql/data
+    networks:
+      - tata-network
+
+  redis_zkp:
+      image: redis:7
+      ports:
+        - "6380:6379"
+      networks:
+        - tata-network
+
 networks:
   tata-network:
     driver: bridge
 
 volumes:
   mongo-data:
+  postgres_core_data:
+  mongodb_memex_data:
+  mysql_moto_data:
+  postgres_zkp_data:

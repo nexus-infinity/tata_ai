@@ -1,0 +1,12 @@
+Container Report for objective_herschel (vonwig/inotifywait:latest)
+--------------------------------------------------------------------------------
+Checking for sensitive environment variables (username/password):
+No sensitive environment variables found.
+Checking for configuration files (e.g., .conf, .yml, .json):
+No configuration files found.
+Looking for large files (over 100MB):
+No large files found.
+Checking for database files (e.g., .db, .sqlite, .mdb):
+No database files found.
+No actionable data found in container objective_herschel. You can safely ignore.
+

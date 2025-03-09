@@ -1,0 +1,13 @@
+# Remove existing dependencies
+rm -rf node_modules package-lock.json yarn.lock
+
+# Install with yarn
+yarn install
+
+# Add Three.js related packages
+yarn add three @react-three/fiber @react-three/postprocessing @react-spring/three
+yarn add -D @types/three
+
+# Start the development server
+yarn dev
+

@@ -101,7 +101,9 @@ async function checkProjectStructure() {
   let allDirsExist = true;
   for (const dir of requiredDirs) {
     const exists = await checkDirectoryExists(dir.path, dir.name);
-    if (!exists) allDirsExist = false;
+    if (!exists) {
+        allDirsExist = false;
+    }
   }
   
   // Check for core module directories
@@ -115,7 +117,9 @@ async function checkProjectStructure() {
   
   for (const dir of coreDirs) {
     const exists = await checkDirectoryExists(dir.path, dir.name);
-    if (!exists) allDirsExist = false;
+    if (!exists) {
+      allDirsExist = false;
+    }
   }
   
   // Check for key files
@@ -154,7 +158,9 @@ async function checkFrontendConfig() {
   console.log(`${colors.green}✓ package.json found${colors.reset}`);
   
   const packageJson = await readJsonFile(packageJsonPath);
-  if (!packageJson) return false;
+  if (!packageJson) {
+    return false;
+  }
   
   // Check required dependencies
   console.log(`${colors.cyan}Checking frontend dependencies...${colors.reset}`);
@@ -437,7 +443,9 @@ async function main() {
   let allPassed = true;
   for (const [name, passed] of Object.entries(results)) {
     console.log(`${passed ? colors.green + '✓' : colors.red + '✘'} ${name}${colors.reset}`);
-    if (!passed) allPassed = false;
+    if (!passed) {
+      allPassed = false;
+    }
   }
   
   if (allPassed) {

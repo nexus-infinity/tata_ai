@@ -4,7 +4,7 @@ from huggingface_hub import HfApi, snapshot_download
 
 def prepare_deployment():
     # Load Hugging Face config
-    with open('config/huggingface_config.json', 'r') as f:
+    with open('configs/huggingface_config.json', 'r') as f:
         hf_config = json.load(f)
 
     # Download the latest model

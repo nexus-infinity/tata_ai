@@ -39,12 +39,11 @@ def check_language_models():
         print(f"Language models directory missing: {models_dir}")
     else:
         print(f"Language models directory exists: {models_dir}")
-        # Check for model files inside the directory
-        model_files = os.listdir(models_dir)
-        if not model_files:
-            print(f"No models found in {models_dir}")
+        _files = os.listdir(models_dir)
+        if _files:
+            print(f"Models found in {models_dir}: {_files}")
         else:
-            print(f"Models found in {models_dir}: {model_files}")
+            print(f"No models found in {models_dir}")
 
 # Run checks
 check_directories()

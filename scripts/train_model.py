@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments,
 from datasets import load_dataset
 
 def load_config():
-    with open('../config/huggingface_config.json', 'r') as f:
+    with open('../configs/huggingface_config.json', 'r') as f:
         return json.load(f)
 
 def load_model_and_tokenizer(config):

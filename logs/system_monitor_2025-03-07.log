@@ -1,0 +1,19 @@
+[2025-03-07T16:19:30.935Z] [INFO] Running system monitor once
+[2025-03-07T16:19:30.936Z] [INFO] Checking service: Tata Core API
+[2025-03-07T16:19:30.945Z] [ERROR] Service Tata Core API is unhealthy: Status code: undefined
+[2025-03-07T16:19:30.946Z] [INFO] Checking service: Tata Flow API
+[2025-03-07T16:19:30.947Z] [ERROR] Service Tata Flow API is unhealthy: Status code: undefined
+[2025-03-07T16:19:30.947Z] [INFO] Checking service: Tata Memex API
+[2025-03-07T16:19:30.949Z] [ERROR] Service Tata Memex API is unhealthy: Status code: undefined
+[2025-03-07T16:19:30.949Z] [INFO] Checking service: Tata ZKP API
+[2025-03-07T16:19:30.950Z] [ERROR] Service Tata ZKP API is unhealthy: Status code: undefined
+[2025-03-07T16:19:30.951Z] [INFO] Checking service: Frontend Dashboard
+[2025-03-07T16:19:30.952Z] [ERROR] Service Frontend Dashboard is unhealthy: Status code: undefined
+[2025-03-07T16:19:30.952Z] [INFO] Checking Docker containers
+[2025-03-07T16:19:31.104Z] [ERROR] Some Docker containers are not running: tata-core, tata-flow, tata-memex, tata-zkp, mongodb, postgres
+[2025-03-07T16:19:31.104Z] [INFO] Checking system resources
+[2025-03-07T16:19:31.116Z] [SUCCESS] CPU usage is normal: 26.40%
+[2025-03-07T16:19:31.116Z] [WARNING] High memory usage: 99.37% (threshold: 80%)
+[2025-03-07T16:19:31.116Z] [SUCCESS] Disk usage is normal: 41%
+[2025-03-07T16:19:31.118Z] [INFO] Monitoring results saved to /Volumes/akron/tata-ai/logs/monitor_results_2025-03-07T16-19-31.117Z.json
+[2025-03-07T16:19:31.118Z] [INFO] Monitor run complete

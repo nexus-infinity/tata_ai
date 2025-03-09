@@ -1,3 +1,11 @@
+# 🔒 Ignore environment variables and credentials
+.env
+.env.*
+*.json
+configs/credentials/
+secrets/
+keys/
+
 # Node.js / Vercel
 .vercel/
 node_modules/

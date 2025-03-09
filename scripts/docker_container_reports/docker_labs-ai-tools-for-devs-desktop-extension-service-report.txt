@@ -1,0 +1,14 @@
+Container Report for docker_labs-ai-tools-for-devs-desktop-extension-service
+--------------------------------------------------------------------------------
+Checking for sensitive environment variables (username/password)...
+No sensitive environment variables found.
+Checking for configuration files (e.g., .conf, .yml, .json)...
+Configuration files found:
+OCI runtime exec failed: exec failed: unable to start container process: exec: "find": executable file not found in $PATH: unknown
+Looking for large files (over 100MB)...
+Large files found:
+OCI runtime exec failed: exec failed: unable to start container process: exec: "find": executable file not found in $PATH: unknown
+Checking for database files (.db, .sqlite, .mdb)...
+Database files found:
+OCI runtime exec failed: exec failed: unable to start container process: exec: "find": executable file not found in $PATH: unknown
+--------------------------------------------------------------------------------
