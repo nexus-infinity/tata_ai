@@ -1,31 +1,21 @@
-# 🔧 General Scripts
+# 📁 Directory
 
 ## Purpose
 
-General utility scripts for the Tata AI platform.
-
-## Metadata
-
-- **Type**: Utility
-- **Status**: Active
-- **Last Updated**: 2025-03-10
-- **Maintainer**: Tata AI Team
+A component of the Tata AI platform.
 
 ## Contents
 
-- **📁 check_project**: (Planned) A component of the Tata AI platform.
-- **📁 update_readme**: (Planned) A component of the Tata AI platform.
-- **📁 setup**: (Planned) A component of the Tata AI platform.
-- **📁 cleanup**: (Planned) A component of the Tata AI platform.
+### Files
 
-## Relationships
+- 1 No extension file(s)
+- 12 JS file(s)
+- 3 PY file(s)
+- 3 SH file(s)
 
-- **Part of**: Tata AI Platform
 
-## Usage
+## Metadata
 
-This directory is part of the Tata AI platform. For more information, see the main [README.md](../../README.md) file.
-
----
-
-*This README was automatically generated on 2025-03-10T02:57:38.623Z.*
+- **Type**: Script
+- **Last Updated**: 2025-03-10
+- **Status**: Active
